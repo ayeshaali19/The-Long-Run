@@ -59,7 +59,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlatformManager.cs" />
     <Compile Include="Assets\Scripts\Runner.cs" />
+    <Compile Include="Assets\Scripts\SkylineManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/ayesha/Documents/11th Grade/AdvCS/game/The-Long-Run/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
