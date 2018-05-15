@@ -8,6 +8,8 @@ public class Runner : MonoBehaviour {
     public float acceleration;
     private bool touchingPlatform;
     public Vector3 jumpVelocity;
+    public float gameOverY;
+    private Vector3 startPosition;
 
     void Update() {
         if (touchingPlatform && Input.GetButtonDown("Jump")) {
@@ -16,6 +18,10 @@ public class Runner : MonoBehaviour {
         }
         transform.Translate(5f * Time.deltaTime, 0f, 0f);
         distanceTraveled = transform.localPosition.x;
+
+        if (transform.localPosition.y < gameOverY) {
+            GameEventManager.TriggerGameOver();
+        }
     }
 
     void FixedUpdate(){
@@ -31,5 +37,28 @@ public class Runner : MonoBehaviour {
 
     void OnCollisionExit() {
         touchingPlatform = false;
+    }
+
+    void Start() {
+        GameEventManager.GameStart += GameStart;
+        GameEventManager.GameOver += GameOver;
+        startPosition = transform.localPosition;
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        enabled = false;
+    }
+
+    private void GameStart() {
+        distanceTraveled = 0f;
+        transform.localPosition = startPosition;
+        GetComponent<MeshRenderer>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        enabled = true;
+    }
+
+    private void GameOver() {
+        GetComponent<MeshRenderer>().enabled = false;
+        GetComponent<Rigidbody>().isKinematic = true;
+        enabled = false;
     }
 }
