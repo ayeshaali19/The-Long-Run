@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{2E18452E-7298-8754-49D9-43BA65F04085}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GUIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/SkylineManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Runner.cs" Line="17" Column="58" />
-      <File FileName="Assets/Scripts/SkylineManager.cs" Line="5" Column="33" />
-      <File FileName="Assets/Scripts/PlatformManager.cs" Line="8" Column="45" />
+      <File FileName="Assets/Scripts/Runner.cs" Line="50" Column="49" />
+      <File FileName="Assets/Scripts/SkylineManager.cs" Line="27" Column="5" />
+      <File FileName="Assets/Scripts/PlatformManager.cs" Line="23" Column="51" />
       <File FileName="Assets/Scripts/GameEventManager.cs" Line="4" Column="5" />
-      <File FileName="Assets/Scripts/GUIManager.cs" Line="9" Column="2" />
+      <File FileName="Assets/Scripts/GUIManager.cs" Line="21" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

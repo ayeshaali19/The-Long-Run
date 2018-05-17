@@ -10,6 +10,8 @@ public class Runner : MonoBehaviour {
     public Vector3 jumpVelocity;
     public float gameOverY;
     private Vector3 startPosition;
+    public Camera cam;
+    private Color random;
 
     void Update() {
         if (touchingPlatform && Input.GetButtonDown("Jump")) {
@@ -40,6 +42,9 @@ public class Runner : MonoBehaviour {
     }
 
     void Start() {
+        cam = Camera.main;
+        cam.clearFlags = CameraClearFlags.SolidColor;
+        cam.backgroundColor = new Color32(140, 174, 250, 255);
         GameEventManager.GameStart += GameStart;
         GameEventManager.GameOver += GameOver;
         startPosition = transform.localPosition;
@@ -49,6 +54,8 @@ public class Runner : MonoBehaviour {
     }
 
     private void GameStart() {
+        random = new Color32((byte)Random.Range(100, 150), (byte)Random.Range(100, 170), (byte)Random.Range(200, 255), 255);
+        cam.backgroundColor = random;
         distanceTraveled = 0f;
         transform.localPosition = startPosition;
         GetComponent<MeshRenderer>().enabled = true;

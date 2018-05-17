@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour {
-    public GUIText gameOverText, instructionsText, runnerText;
+    public Text gameOverText, title;
 
 
     void Start() {
         GameEventManager.GameStart += GameStart;
         GameEventManager.GameOver += GameOver;
         gameOverText.enabled = false;
+        title.enabled = true;
     }
 
     void Update() {
@@ -20,15 +22,15 @@ public class GUIManager : MonoBehaviour {
 
     private void GameStart() {
         gameOverText.enabled = false;
-        instructionsText.enabled = false;
-        runnerText.enabled = false;
+        //instructionsText.enabled = false;
+        title.enabled = false;
         enabled = false;
     }
 
 
     private void GameOver() {
         gameOverText.enabled = true;
-        instructionsText.enabled = true;
+        //instructionsText.enabled = true;
         enabled = true;
     }
 
