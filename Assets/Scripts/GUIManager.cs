@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour {
     public Text gameOverText, title;
-
+    GameObject button;
 
     void Start() {
+        button = GameObject.Find("Button");
         GameEventManager.GameStart += GameStart;
         GameEventManager.GameOver += GameOver;
         gameOverText.enabled = false;
@@ -22,17 +23,18 @@ public class GUIManager : MonoBehaviour {
 
     private void GameStart() {
         gameOverText.enabled = false;
-        //instructionsText.enabled = false;
         title.enabled = false;
         enabled = false;
     }
 
-
     private void GameOver() {
         gameOverText.enabled = true;
-        //instructionsText.enabled = true;
         enabled = true;
     }
 
+    public void ButtonClicked() {
+        GameEventManager.TriggerGameStart();
+        button.SetActive(false);
+    }
 
 }
