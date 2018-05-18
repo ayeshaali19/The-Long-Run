@@ -201,6 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 2015466436}
   title: {fileID: 996784995}
+  button: {fileID: 1566740050}
 --- !u!1 &576462228
 GameObject:
   m_ObjectHideFlags: 0
